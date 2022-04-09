@@ -1,0 +1,88 @@
+Contoh Inheritance
+
+public class Karyawan { 
+	String NIP;
+	String nama;
+	String jenisKelamin;
+	
+	public void masukKerja() {
+		System.out.println("Masuk kerja");
+	}
+	
+	public void beriNama(String nama) {
+		this.nama = nama;
+	}
+}
+
+
+public class Dosen extends Karyawan {
+
+}
+
+public class Main {
+	public static void main(String[] args) {
+		Dosen dosen = new Dosen();
+		dosen.masukKerja();
+	}
+}
+
+Contoh Overriding
+
+public class Binatang {
+    public void begerak(){
+        System.out.println("Binatang bergerak sesuai kemampuannya");
+    }
+    public void berkembangBiak(){
+        System.out.println("Binatang berkembang biak sesuai kemampuannya");
+    }
+
+}
+public class Mamalia extends Binatang {
+    //overriding method parent class
+    public void begerak(){
+        System.out.println("Mamalia bergerak sebagian besar dengan kakinya");
+    }    
+    public void berlari(){
+        System.out.println("Sebagian Mamalia dapat berlari");
+    }
+}
+public class PenggunaanOverriding {
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        Binatang b = new Binatang();
+        Mamalia m = new Mamalia();
+        Binatang bm = new Mamalia();
+        
+        b.begerak();
+        m.begerak();
+        bm.begerak();
+        bm.berkembangBiak();
+    }
+}
+
+Contoh Polymorphism
+
+public class DaftarMahasiswa extends Mahasiswa{
+
+public void printNama(){
+
+System.out.println(“Hallo, saya Mahasiswa”);
+
+Super.printNama();
+
+}
+}
+
+public class Main{
+
+public static void main(String[] args]) {
+
+DaftarMahasiswa mhs = new DaftarMahasiswa();
+mhs.setNim(“0898736”);
+mhs.setNama(“Dina Tiya”);
+mhs.printNim();
+mhs.printNama();
+}
+
+}
+
